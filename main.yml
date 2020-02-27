@@ -111,11 +111,6 @@
     # Prepare Python3.5 based environment, install the stuff
     # -------------------------------------------------------------------------
 
-    - name: Prepare python environment
-      command: virtualenv -p /usr/bin/python3.5 --system-site-packages --always-copy /var/lib/pgadmin/env 
-      become: yes
-      become_user: pgadmin
-
     - name: Install psycopg2, wheel, uwsgi python packages
       pip:
         name: "{{ item }}"
